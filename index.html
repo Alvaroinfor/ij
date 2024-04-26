@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suma de Términos Pares de Fibonacci</title>
+<style>
+body {
+background-color: lightblue;
+}
+.p1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+</style>
+</head>
+<body>
+
+<h1 class="h1">Suma de Términos Pares de Fibonacci</h1>
+
+<button onclick="calcularSuma()">Calcular Suma</button>
+
+<p1 class="p1">La suma de los términos pares de la secuencia de Fibonacci menores que 4 millones es: <span id="resultado"></span></p1>
+
+<script>
+    function calcularSuma() {
+        let suma = 0;
+        let previo = 1;
+        let actual = 2;
+
+        while (actual <= 4000000) {
+            if (actual % 2 === 0) {
+                suma += actual;
+            }
+            let siguiente = previo + actual;
+            previo = actual;
+            actual = siguiente;
+        }
+
+        document.getElementById('resultado').textContent = suma;
+    }
+</script>
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Escudo_UNI.png" width="300" height="300">
+
+</body>
+</html>
